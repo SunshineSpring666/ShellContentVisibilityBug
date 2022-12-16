@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="MaApp.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:MaApp"
+       FlyoutBehavior="Locked"
+       x:Name="this"
+       BindingContext="{x:Reference this}">
+
+    <ShellContent Title="0_LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" FlyoutItemIsVisible="False"/>
+    <ShellContent Title="1_AnnouncementsPage" ContentTemplate="{DataTemplate local:AnnouncementsPage}" IsVisible="{Binding Permissions, Converter={StaticResource PermissionsToVisibility}, ConverterParameter=announcement}"/>
+    <ShellContent Title="2_InventoriesPage" ContentTemplate="{DataTemplate local:InventoriesPage}" IsVisible="{Binding Permissions, Converter={StaticResource PermissionsToVisibility}, ConverterParameter=specification}"/>
+    <ShellContent Title="3_OrdersPage" ContentTemplate="{DataTemplate local:OrdersPage}" IsVisible="{Binding Permissions, Converter={StaticResource PermissionsToVisibility}, ConverterParameter=order}"/>
+    <ShellContent Title="4_SchedulesPage" ContentTemplate="{DataTemplate local:SchedulesPage}" IsVisible="{Binding Permissions, Converter={StaticResource PermissionsToVisibility}, ConverterParameter=schedule}"/>
+    <ShellContent Title="5_SharedTasksPage" ContentTemplate="{DataTemplate local:SharedTasksPage}" IsVisible="{Binding Permissions, Converter={StaticResource PermissionsToVisibility}, ConverterParameter=sharedtask}"/>
+    
+</Shell>
